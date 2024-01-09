@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #efefef;
+  --border-color:rgb(149, 149, 149);
+  --logo-first-color:#F8CB46;
+  --logo-second-color:#54b226;
+  --cart-bg-color:#0c831f;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* header section */
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  width: 100%;
+  padding: 2rem 4.5rem;
+  box-shadow: .5px .5px .5px 0.9px var(--text-color);
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--logo-first-color);
+}
+.logo span{
+  color: var(--logo-second-color);
+}
+
+/* navbar section */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 6rem;
+}
+
+/* nav address section */
+
+.left-nav p {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.left-nav span {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* input section */
+
+.mid-nav {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.mid-nav input {
+  width: 100%;
+  height: 4.5rem;
+  border-radius: 1rem;
+  outline: none;
+  /* border: none; */
+  border: .5px solid var(--border-color);
+  padding-left: 5rem;
+  font-size: 2rem;
+}
+
+.mid-nav ::-webkit-input-placeholder {
+  opacity: .5;
+}
+
+.mid-nav .bx-search {
+  position: absolute;
+  font-size: 2rem;
+  opacity: .5;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.right-nav {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* login section */
+
+.right-nav .login-btn {
+  font-size: 2.5rem;
+  background: transparent;
+  font-weight: 400;
+}
+
+
+#cart-logo {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+
+.login-btn {
+  position: relative;
+  cursor: pointer;
+
+}
+
+.login-container {
+  position: absolute;
+  margin-top: 20rem;
+  margin-left: -80rem;
+  width: 40rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: .5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.back-btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+ .login-icon{
+  width:5rem;
+  height:5rem;
+  margin-left: 45%;
+  margin-bottom: 2rem;
+  
+}
+ .login-icon img{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.login-container .back-btn-box a {
+  font-size: 2rem;
+  color: rgb(150, 148, 148);
+}
+
+.login-input-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 30rem;
+  gap: 2rem;
+}
+
+.login-input-box  input {
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  padding: 1.5rem 3.5rem;
+  font-weight:300;
+  width: 100%;
+  border: .5px solid var(--border-color);
+}
+
+
+.login-input-box .login-submit-btn{
+  width: 100%;
+  border-radius: 1rem;
+  background-color: #efefef;
+  height: 4.5rem;
+
+}
+.login-input-box .login-submit-btn a{
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+}
+.login-box-para-container{
+  margin-bottom: 2rem;
+}
+.login-box-para-container h3{
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.login-box-para-container p{
+  font-size: 2rem;
+  font-weight: 350;
+}
+.login-box-bottom-links{
+  margin-top: 3rem;
+}
+.login-box-bottom-links p{
+  font-size: 1.5rem;
+}
+
+.login-container{
+  display: none;
+}
+.login-container.active{
+  display: block;
+}
+
+/* cart section */
+
+.cart-container .cart-btn {
+  font-size: 1.5rem;
+  padding: 1.5rem 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--cart-bg-color);
+  color: var(--text-color);
+}
+
+.cart-container .cart-btn span {
+  font-size: 1.7rem;
+}
+
+.cart-container {
+  position: relative;
+
+}
+
+.cart-items-container {
+  margin-top: 16rem;
+  position: absolute;
+  width: 45rem;
+  height: 100%;
+  border: 2px solid black;
+  margin-left: -20rem;
+  transform: translateX(100%);
+  padding: 2.5rem;
+  transition: 0.5s;
+}
+
+.cart-items-container.active {
+  transform: translateX(0);
+}
+
+.cart-items {
+  border: 2px solid beige;
+}
