@@ -26,6 +26,7 @@
   <body>
     <header class="header">
       <a href="#" class="logo" id="logo">blink<span>it</span></a>
+
       <nav class="navbar">
         <div class="left-nav">
           <div>
@@ -33,11 +34,15 @@
           </div>
           <div class="nav-address-container">
             <span>Babarpur, Delhi, 110032, India </span>
-            <span><i class="bx bxs-down-arrow" onclick="addressBtn();"></i> </span>
+            <span
+              ><i class="bx bxs-down-arrow" onclick="addressBtn();"></i>
+            </span>
             <div class="nav-address-box" id="js-address-btn">
               <div class="nav-address-title-box">
                 <p>Change Location</p>
-                <span onclick="addressRemoveBtn();"><i class="bx bx-x"></i></span>
+                <span onclick="addressRemoveBtn();"
+                  ><i class="bx bx-x"></i
+                ></span>
               </div>
               <div class="address-location-box">
                 <span><a href="#">Detect my location</a></span>
@@ -100,6 +105,41 @@
         </div>
       </nav>
     </header>
+
+    <!-- main section -->
+    <main>
+      <section class="hero-section">
+        <div class="first-hero-thumnel">
+          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg" alt="" /></a>
+        </div>
+        <div class="Second-hero-thumnel">
+          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="" /></a>
+          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/print_crystal_WEB_0.jpg" alt="" /></a>
+          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg" alt="" /></a>
+          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-03/babycare-WEB.jpg" alt="" /></a>
+        </div>
+        <div class="Product-section" id="js-Product-section">
+          <!-- Product Dynamic Generated-->
+        </div>
+
+
+        <div class="product-item-section">
+         <div class="product-item-title">
+          <div><h3>Rolling paper & tobacco</h3></div>
+          <div><p><a href="#">See All</a></p></div>
+         </div>
+         <div>
+
+         </div>
+        </div>
+        
+      </section>
+      
+
+     
+    </main>
+    <script src="productData.js"></script>
     <script src="index.js"></script>
+    
   </body>
 </html>
