@@ -80,7 +80,9 @@ let productData = [
     id:'020',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-20.png',
   },
-
-  
-
 ];
+let dairyProducts = [];
+let snacksProducts =[];
+let mouthFreshenerProducts =[];
+let coldDrinksproducts = [];
+let candieProducts = [];
