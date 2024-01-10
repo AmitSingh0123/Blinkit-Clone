@@ -21,7 +21,7 @@ button {
   outline: none;
 }
 
-body {
+body{
   overflow-x: hidden;
 }
 
@@ -34,6 +34,7 @@ body {
   width: 100%;
   padding: 2rem 4.5rem;
   box-shadow: .5px .5px .5px 0.9px var(--text-color);
+  max-width: 100%;
 }
 
 .logo {
@@ -59,14 +60,67 @@ body {
 /* nav address section */
 
 .left-nav p {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 800;
   margin-bottom: .4rem;
 }
 
 .left-nav span {
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.nav-address-container{
+  position: relative;
+}
+.nav-address-box{
+  position: absolute;
+  margin-top: 3rem;
+  border: .5px solid var(--border-color);
+  width: 50rem;
+  padding: 1rem 2rem;
+  display: none;
+}
+.nav-address-box.active{
+  display: block;
+}
+.nav-address-title-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.nav-address-title-box p{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.address-location-box{
+  display: flex;
+  gap: 3rem;
+  margin:2rem 0;
+  align-items: center;
+}
+.address-location-box .nav-choice-btn{
+  border:.5px solid var(--border-color);
+  padding: .6rem;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.address-location-box a{
+  text-decoration: none;
+  background-color: var(--cart-bg-color);
+  padding: 1rem 0.7rem;
+  color: var(--text-color);
+  border-radius: .5rem;
+}
+.address-location-box input {
+  width: 45%;
+  height: 3rem;
+  outline: none;
+  border-radius: .5rem;
+  border: .5px solid var(--border-color);
+  padding:0 1.5rem ;
 }
 
 /* input section */
@@ -264,3 +318,28 @@ body {
 .cart-items {
   border: 2px solid beige;
 }
+
+@media (max-width:1400px){
+html{
+  font-size:55%;
+ 
+} 
+body{
+  overflow-x: hidden;
+} 
+.header{
+  width: 100%;
+  
+}
+}
+@media (max-width:1020px){
+  html{
+    font-size:40%;
+  }  
+  body{
+    overflow-y: hidden;
+  }
+  .header{
+    width: 100%;
+  }
+  }

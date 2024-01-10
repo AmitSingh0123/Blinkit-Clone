@@ -11,6 +11,12 @@ function loginBtn(){
 
 
 function loginBackBtn(){
-  document.querySelector('#js-login-container').classList.remove('active')
+  document.querySelector('#js-login-container').classList.remove('active');
+};
+function addressBtn(){
+  document.querySelector('#js-address-btn').classList.toggle('active');
 
-}
+};
+function addressRemoveBtn(){
+  document.querySelector('#js-address-btn').classList.remove('active')
+};
