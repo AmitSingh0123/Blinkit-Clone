@@ -1,172 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blinkit Order Now!</title>
-    <!-- icons Link -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <!-- icons Link -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <!-- index css link -->
-    <link rel="stylesheet" href="index.css" />
-  </head>
 
-  <body>
-    <header class="header">
-      <a href="#" class="logo" id="logo">blink<span>it</span></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blinkit Order Now!</title>
+  <!-- icons Link -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- icons Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- index css link -->
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-      <nav class="navbar">
-        <div class="left-nav">
-          <div>
-            <p>Delivery in 10 minutes</p>
-          </div>
-          <div class="nav-address-container">
-            <span>Babarpur, Delhi, 110032, India </span>
-            <span
-              ><i class="bx bxs-down-arrow" onclick="addressBtn();"></i>
-            </span>
-            <div class="nav-address-box" id="js-address-btn">
-              <div class="nav-address-title-box">
-                <p>Change Location</p>
-                <span onclick="addressRemoveBtn();"
-                  ><i class="bx bx-x"></i
-                ></span>
-              </div>
-              <div class="address-location-box">
-                <span><a href="#">Detect my location</a></span>
-                <span class="nav-choice-btn">OR</span>
-                <input type="text" placeholder="Search Delivery location " />
-              </div>
+<body>
+  <header class="header">
+    <a href="#" class="logo" id="logo">blink<span>it</span></a>
+
+    <nav class="navbar">
+      <div class="left-nav">
+        <div>
+          <p>Delivery in 10 minutes</p>
+        </div>
+        <div class="nav-address-container">
+          <span>Babarpur, Delhi, 110032, India </span>
+          <span><i class="bx bxs-down-arrow" onclick="addressBtn();"></i>
+          </span>
+          <div class="nav-address-box" id="js-address-btn">
+            <div class="nav-address-title-box">
+              <p>Change Location</p>
+              <span onclick="addressRemoveBtn();"><i class="bx bx-x"></i></span>
+            </div>
+            <div class="address-location-box">
+              <span><a href="#">Detect my location</a></span>
+              <span class="nav-choice-btn">OR</span>
+              <input type="text" placeholder="Search Delivery location " />
             </div>
           </div>
         </div>
-        <div class="mid-nav">
-          <input type="text" class="input-box" placeholder="Search items.." />
-          <i class="bx bx-search"></i>
-        </div>
-        <div class="right-nav">
-          <div>
-            <button class="login-btn" id="js-login-btn">
-              <span onclick="loginBtn()">Login</span>
-              <div class="login-container" id="js-login-container">
-                <div class="back-btn-box">
-                  <a href="#"><i class="bx bx-arrow-back"></i></a>
-                  <a href="#" onclick="loginBackBtn()"
-                    ><i class="bx bx-x"></i
-                  ></a>
-                </div>
-                <div class="login-icon">
-                  <img src="/images/icons/icon.webp" alt="" />
-                </div>
-                <div class="login-box-para-container">
-                  <h3>India's last minute app</h3>
-                  <p>Log in or Sign up</p>
-                </div>
-                <div class="login-input-box">
-                  <input type="number" placeholder="Enter Mobile Number.." />
-
-                  <div class="login-submit-btn"><a href="#">Continue</a></div>
-                </div>
-                <div class="login-box-bottom-links">
-                  <p>
-                    By continuing, you agree to our
-                    <a href="#">Terms of service</a> &
-                    <a href="#">Privacy policy</a>
-                  </p>
-                </div>
+      </div>
+      <div class="mid-nav">
+        <input type="text" class="input-box" placeholder="Search items.." />
+        <i class="bx bx-search"></i>
+      </div>
+      <div class="right-nav">
+        <div>
+          <button class="login-btn" id="js-login-btn">
+            <span onclick="loginBtn()">Login</span>
+            <div class="login-container" id="js-login-container">
+              <div class="back-btn-box">
+                <a href="#"><i class="bx bx-arrow-back"></i></a>
+                <a href="#" onclick="loginBackBtn()"><i class="bx bx-x"></i></a>
               </div>
-            </button>
-          </div>
-          <div class="cart-container">
-            <button class="cart-btn" id="js-cart-btn" onclick="cartBtn();">
-              <i class="bx bx-cart" id="cart-logo"></i><span>cart item</span>
-              <div class="cart-items-container" id="js-cart-items-container">
-                <div class="cart-items">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Nobis, soluta?
-                </div>
+              <div class="login-icon">
+                <img src="/images/icons/icon.webp" alt="" />
               </div>
-            </button>
-
-            <div></div>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- main section -->
-    <main>
-      <section class="hero-section">
-        <div class="first-hero-thumnel">
-          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg" alt="" /></a>
-        </div>
-        <div class="Second-hero-thumnel">
-          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg" alt="" /></a>
-          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/print_crystal_WEB_0.jpg" alt="" /></a>
-          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg" alt="" /></a>
-          <a href="#"><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-03/babycare-WEB.jpg" alt="" /></a>
-        </div>
-        <div class="Product-section" id="js-Product-section">
-          <!-- Product Dynamic Generated-->
-        </div>
-
-
-        <div class="product-item-section">
-         <div class="product-item-title">
-          <div><h3>Rolling paper & tobacco</h3></div>
-          <div><p><a href="#">See All</a></p></div>
-         </div>
-         <div class="product-items-container">
-          <div class="produst">
-            <div class="product-body">
-              <div class="product-img">
-                <img src="/images/icons/icon.webp" alt="">
+              <div class="login-box-para-container">
+                <h3>India's last minute app</h3>
+                <p>Log in or Sign up</p>
               </div>
-              <div class="product-deteles">
-                <div class="product-time-logo">
-                  <div><img src="/images/icons/15-mins-logo.avif" alt=""></div>
-                  <div><span>15 MINS</span></div>
-                </div>
-                <div class="product-title">
-                  <h4>Ultimate Rolling Paper with Filter Tips &</h4>
-                </div>
-                <div class="product-weight">
-                  <p>15g</p>
-                </div>
-                <div class="product-btn-box">
-                  <div class="Product-amount">
-                    <p>₹699</p>
-                  </div>
-                  <div class="product-btn">
-                    <button class="product-add-btn">add</button>
-                  </div>
-                </div>
+              <div class="login-input-box">
+                <input type="number" placeholder="Enter Mobile Number.." />
+
+                <div class="login-submit-btn"><a href="#">Continue</a></div>
+              </div>
+              <div class="login-box-bottom-links">
+                <p>
+                  By continuing, you agree to our
+                  <a href="#">Terms of service</a> &
+                  <a href="#">Privacy policy</a>
+                </p>
               </div>
             </div>
-          </div>
-
-         </div>
+          </button>
         </div>
-        
-      </section>
-      
+        <div class="cart-container">
+          <button class="cart-btn" id="js-cart-btn" onclick="cartBtn();">
+            <i class="bx bx-cart" id="cart-logo"></i><span>cart item</span>
+            <div class="cart-items-container" id="js-cart-items-container">
+              <div class="cart-items">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Nobis, soluta?
+              </div>
+            </div>
+          </button>
 
-     
-    </main>
-    <script src="productData.js"></script>
-    <script src="index.js"></script>
-    
-  </body>
+          <div></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main section -->
+  <main>
+    <section class="hero-section">
+      <div class="first-hero-thumnel">
+        <a href="#"><img
+            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg"
+            alt="" /></a>
+      </div>
+      <div class="Second-hero-thumnel">
+        <a href="#"><img
+            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg"
+            alt="" /></a>
+        <a href="#"><img
+            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/print_crystal_WEB_0.jpg"
+            alt="" /></a>
+        <a href="#"><img
+            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
+            alt="" /></a>
+        <a href="#"><img
+            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-03/babycare-WEB.jpg"
+            alt="" /></a>
+      </div>
+      <div class="Product-section" id="js-Product-section">
+        <!-- Product Dynamic Generated-->
+      </div>
+
+
+      <div class="product-item-section">
+        <div class="product-item-title">
+          <div>
+            <h3>Rolling paper & tobacco</h3>
+          </div>
+          <div>
+            <p><a href="#">See All</a></p>
+          </div>
+        </div>
+        <div class="product-items-container" id="js-product-items-container1">
+          <div>ashdhasi</div>
+
+          
+
+          
+
+        </div>
+
+    </section>
+
+
+
+  </main>
+  <script src="productData.js"></script>
+  <script src="index.js"></script>
+
+</body>
+
 </html>

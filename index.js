@@ -1,7 +1,7 @@
 onLoad();
 function onLoad() {
   showDisplayProduct();
-};
+}
 
 function cartBtn() {
   document.querySelector("#js-cart-items-container").classList.toggle("active");
@@ -25,18 +25,60 @@ function addressRemoveBtn() {
 // Product section
 
 function showDisplayProduct() {
-  let productContainer = document.querySelector("#js-Product-section");
-  let newHtml = "";
+  let productContainer1 = document.querySelector("#js-Product-section");
+  let newHtml1 = "";
+
   for (let i = 0; i < productData.length; i++) {
     let { img_src } = productData[i];
 
-    newHtml += `
+    newHtml1 += `
     <div>
     <a href="#"><img src="${img_src}" alt=""></a>
-    
     </div>
-    
     `;
+  }
+  productContainer1.innerHTML = newHtml1;
+}
+
+function showDisplayProduct2() {
+  let productContainer = document.querySelector("#js-product-items-container1");
+  let newHtml = "";
+
+  for (let i = 0; i < dairyProducts.length; i++) {
+    let { item_name, img_src, weight, price, origanal_price } =
+      dairyProducts[i];
+    console.log(dairyProducts[i]);
+    newHtml += `<div class="produst">
+    <div class="product-body">
+      <div class="product-img">
+        <img src="${img_src}" alt="">
+      </div>
+      <div class="product-deteles">
+        <div class="product-time-logo">
+          <div><img src="/images/icons/15-mins-logo.avif" alt=""></div>
+          <div><span>15 MINS</span></div>
+        </div>
+        <div class="product-title">
+          <h4>${item_name}</h4>
+        </div>
+        <div class="product-weight">
+          <p>${weight}</p>
+        </div>
+        <div class="product-btn-box">
+          <div class="Product-amount">
+            <p>₹${price} <span> ₹${origanal_price}</span></p>
+          </div>
+          <div class="product-btn">
+            <button class="product-add-btn">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+    console.log(i);
   }
   productContainer.innerHTML = newHtml;
 }
+
+showDisplayProduct2() ;
