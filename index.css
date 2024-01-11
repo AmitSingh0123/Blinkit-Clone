@@ -10,8 +10,9 @@
   --logo-first-color: #F8CB46;
   --logo-second-color: #54b226;
   --cart-bg-color: #0c831f;
-  --btn-bg--first-color:#95cf7660;
-  --btn-hover-color:#95cf76a8;
+  --btn-bg--first-color: #95cf7660;
+  --btn-hover-color: #95cf76a8;
+  --bg-color: #ffff;
 }
 
 html {
@@ -36,7 +37,7 @@ button {
   box-shadow: .5px .5px .5px 0.9px var(--text-color);
   max-width: 100%;
   position: fixed;
-  background-color: var(--text-color);
+  background-color: var(--bg-color);
 
 }
 
@@ -58,7 +59,8 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0 6rem;
+  margin-left: 7rem;
+
 }
 
 /* nav address section */
@@ -80,9 +82,10 @@ button {
 
 .nav-address-box {
   position: absolute;
-  margin-top: 3rem;
   border: .5px solid var(--border-color);
   width: 50rem;
+  margin-top: 8rem;
+  background-color: var(--bg-color);
   padding: 1rem 2rem;
   display: none;
 }
@@ -149,7 +152,6 @@ button {
   height: 4.5rem;
   border-radius: 1rem;
   outline: none;
-  /* border: none; */
   border: .5px solid var(--border-color);
   padding-left: 5rem;
   font-size: 2rem;
@@ -178,7 +180,7 @@ button {
 
 .right-nav .login-btn {
   font-size: 2.5rem;
-  background: transparent;
+  background: var(--bg-color);
   font-weight: 400;
 }
 
@@ -196,8 +198,8 @@ button {
 
 .login-container {
   position: absolute;
-  margin-top: 20rem;
-  margin-left: -80rem;
+  top: 500%;
+  left: -1150%;
   width: 40rem;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -205,6 +207,7 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: var(--bg-color);
   gap: .5rem;
 }
 
@@ -226,7 +229,6 @@ button {
 .login-icon img {
   width: 100%;
   height: 100%;
-
 }
 
 .login-container .back-btn-box a {
@@ -252,19 +254,27 @@ button {
   border: .5px solid var(--border-color);
 }
 
-
 .login-input-box .login-submit-btn {
   width: 100%;
   border-radius: 1rem;
-  background-color: #efefef;
+  background-color: #d4d2d2;
   height: 4.5rem;
+  transition: .5s;
+}
 
+.login-input-box .login-submit-btn:hover {
+  background-color: var(--text-color);
 }
 
 .login-input-box .login-submit-btn a {
   text-decoration: none;
   font-size: 2rem;
-  color: black;
+  color: var(--text-color);
+  transition: .5s;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+  color: rgb(36, 36, 36);
 }
 
 .login-box-para-container {
@@ -308,6 +318,11 @@ button {
   cursor: pointer;
   background-color: var(--cart-bg-color);
   color: var(--text-color);
+  transition: .5s;
+}
+
+.cart-container .cart-btn:hover {
+  background-color: #128b26;
 }
 
 .cart-container .cart-btn span {
@@ -320,22 +335,22 @@ button {
 }
 
 .cart-items-container {
-  margin-top: 20rem;
+  margin-top: 10rem;
   position: absolute;
-  width: 45rem;
+  width: 55rem;
   height: fit-content;
   border: 2px solid black;
-  margin-left: -20rem;
-  transform: translateX(100%);
+  margin-left: -39rem;
+  transform: translateX(105%);
   padding: 2rem;
   transition: 0.5s;
-  background-color: #ffff;
+  background-color: var(--bg-color);
   z-index: 999;
   color: black;
 }
 
 .cart-items-container.active {
-  transform: translateX(-5%);
+  transform: translateX(-0%);
 }
 
 .cart-items {
@@ -345,19 +360,16 @@ button {
 /* main section */
 
 main {
-  border: 2px solid black;
-  margin: 15rem auto;
+  margin-top: 14rem;
   position: absolute;
   display: flex;
   width: 100%;
-  flex-direction: column;
-  background-color: #0c831f;
+  justify-content: center;
   z-index: -999;
 
 }
 
 section {
-  border: 2px solid black;
   max-width: 140rem;
   width: 100%;
   margin-top: 1rem;
@@ -365,7 +377,7 @@ section {
   z-index: 999;
   height: 100;
   z-index: 999;
-  position: absolute;
+
 }
 
 .hero-section {
@@ -383,7 +395,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .Product-section {
@@ -399,18 +411,21 @@ section {
 .product-item-section {
   width: 100%;
   margin: 5rem 0;
+  border: 2px solid black;
+  padding: 1rem 0;
 }
 
 .product-item-title {
-  display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 2rem;
+  display: flex;
 }
 
 .product-item-title h3 {
   font-size: 2.5rem;
   font-weight: 800;
+
 }
 
 .product-item-title a {
@@ -421,25 +436,39 @@ section {
 }
 
 /* product item container */
-.produst{
-  width:20rem;
-  height: 30.5rem;
+#js-item {
+  text-decoration: none;
+  color: black;
+}
+
+.produst {
+  width: 20rem;
+  height: 29.5rem;
   border: .5px solid var(--border-color);
   padding: 1rem;
   border-radius: .5rem;
   box-shadow: 0rem 0rem .5rem .5px var(--border-color);
 }
-.produst-body{
+
+.produst-body {
   width: 100%;
   height: 100%;
 }
-.product-img{
+
+.product-img {
   height: 14rem;
-  
+
 }
+
 .product-img img {
   width: 100%;
   height: 100%;
+}
+
+#or-price {
+  text-decoration: line-through;
+  opacity: .5;
+  margin-left: 1rem;
 }
 
 .product-time-logo {
@@ -467,9 +496,11 @@ section {
 .product-weight {
   margin-top: .5rem;
 }
-.product-title{
+
+.product-title {
   font-size: 1.3rem;
 }
+
 .product-weight {
   font-size: 1.4rem;
   font-weight: 600;
@@ -484,9 +515,10 @@ section {
 .Product-amount {
   font-size: 1.4rem;
   font-weight: 750;
-  margin-top:.9rem ;
+  margin-top: .9rem;
 }
-.product-add-btn{
+
+.product-add-btn {
   width: 6.7rem;
   height: 3.2rem;
   font-size: 1.3rem;
@@ -497,19 +529,54 @@ section {
   background-color: var(--btn-bg--first-color);
   border: 1px solid var(--cart-bg-color);
 }
-.product-add-btn:hover{
+
+.product-add-btn:hover {
   background-color: var(--btn-hover-color);
 }
+
 /* product-items-container */
-#js-product-items-container1{
-  display:grid;
-  grid-template-columns:repeat(15,1fr);
-  align-items:center;
-  gap:1rem;
-  
+#js-product-items-container1 {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  align-items: center;
+  gap: .5rem;
+  padding: 0 3rem;
+  overflow:scroll;
+  position: relative;
 }
-.product-item-section{
-  
+#js-product-items-container1::-webkit-scrollbar{
+  display: none;
+}
+
+/* item-next-btns-container */
+.item-next-btns-container {
+  display: flex;
+  align-items: center;
+  bottom: 15%;
+  position: absolute;
+  max-width: 100%;
+
+}
+
+.item-next-btns-container i {
+  font-size: 3rem;
+  background-color: var(--text-color);
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px .5px var(--text-color);
+
+}
+
+.item-next-btns-container i:hover {
+  background-color: var(--bg-color);
+  box-shadow: 0px 0px 1px .5px var(--text-color);
+}
+
+.next-btn {
+  margin-left: 130rem;
+
+
 }
 
 @media (max-width:1440px) {

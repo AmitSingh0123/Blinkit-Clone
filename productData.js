@@ -92,7 +92,7 @@ let dairyProducts = [
   },
   {
     id:'002',
-    item_name:'Britannia 100% Whole Wheat Bread',
+    item_name:'Britannia Whole..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/127031a.jpg?ts=1688811024',
     weight:'400 g',
     price:'55',
@@ -108,7 +108,7 @@ let dairyProducts = [
   },
   {
     id:'004',
-    item_name:'Amul Pure Milk Cheese Slices',
+    item_name:'Amul Pure Milk..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/168a.jpg?ts=1689327537',
     weight:'200 g',
     price:'144',
@@ -116,7 +116,7 @@ let dairyProducts = [
   },
   {
     id:'005',
-    item_name:'Amul Mithai Mate Condensed Milk',
+    item_name:'Amul Mithai Mate..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/26164a.jpg?ts=1690814323',
     weight:'200 g',
     price:'66',
@@ -132,7 +132,7 @@ let dairyProducts = [
   },
   {
     id:'007',
-    item_name:'Nandini Toned Fresh Milk',
+    item_name:'Nandini Toned..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=120,h=120/app/images/products/full_screen/pro_37083.jpg?ts=1700652993',
     weight:'500 g',
     price:'24',
@@ -148,7 +148,7 @@ let dairyProducts = [
   },
   {
     id:'009',
-    item_name:'Nestle Milkmaid Sweetened Condense',
+    item_name:'Nestle Milkmaid..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/10491a.jpg?ts=1688463545',
     weight:'360 g',
     price:'143',
@@ -164,7 +164,7 @@ let dairyProducts = [
   },
   {
     id:'011',
-    item_name:'Britannia Brown Bread',
+    item_name:'Britannia Brown..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/15364a.jpg?ts=1687525088',
     weight:'400 g',
     price:'55',
@@ -180,7 +180,7 @@ let dairyProducts = [
   },
   {
     id:'013',
-    item_name:'Amul Blend Diced Cheese',
+    item_name:'Amul Blend Diced..',
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/439697a.jpg?ts=1688471557',
     weight:'200 g',
     price:'125',
@@ -189,7 +189,7 @@ let dairyProducts = [
   {
     id:'014',
     item_name:'Ranch Ice Cream',
-    img_src:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tasteofhome.com%2Farticle%2Franch-dressing-ice-cream%2F&psig=AOvVaw2zRCAEHE8XNlMOtU_aLy_5&ust=1705050256880000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKj0luz71IMDFQAAAAAdAAAAABAD',
+    img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/486522a.jpg?ts=1688629983',
     weight:'500 g',
     price:'300',
     origanal_price:'350',

@@ -1,6 +1,8 @@
 onLoad();
 function onLoad() {
   showDisplayProduct();
+  showDisplayProduct2();
+  scrollBarItems();
 }
 
 function cartBtn() {
@@ -48,7 +50,7 @@ function showDisplayProduct2() {
     let { item_name, img_src, weight, price, origanal_price } =
       dairyProducts[i];
     console.log(dairyProducts[i]);
-    newHtml += `<div class="produst">
+    newHtml += `<a href="#" id="js-item"><div class="produst">
     <div class="product-body">
       <div class="product-img">
         <img src="${img_src}" alt="">
@@ -66,7 +68,7 @@ function showDisplayProduct2() {
         </div>
         <div class="product-btn-box">
           <div class="Product-amount">
-            <p>₹${price} <span> ₹${origanal_price}</span></p>
+            <p>₹${price} <span id="or-price"> ₹${origanal_price}</span></p>
           </div>
           <div class="product-btn">
             <button class="product-add-btn">add</button>
@@ -74,11 +76,30 @@ function showDisplayProduct2() {
         </div>
       </div>
     </div>
-  </div>
+  </div></a>
   `;
     console.log(i);
   }
   productContainer.innerHTML = newHtml;
 }
 
-showDisplayProduct2() ;
+
+function scrollBarItems(){
+  let scroolContainer = document.querySelector("#js-product-items-container1");
+let backBtn = document.querySelector(".back-btn");
+let nextBtn = document.querySelector(".next-btn");
+scroolContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scroolContainer.scrollLeft += evt.deltaY;
+});
+
+nextBtn.addEventListener("click",() => {
+    scroolContainer.style.scrollBehavior = "smooth";
+    scroolContainer.scrollLeft += 600;
+});
+
+backBtn.addEventListener("click",() => {
+    scroolContainer.style.scrollBehavior = "smooth";
+    scroolContainer.scrollLeft -= 600;
+});
+}
