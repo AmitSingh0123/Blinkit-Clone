@@ -78,11 +78,15 @@
         </div>
         <div class="cart-container">
           <button class="cart-btn" id="js-cart-btn" onclick="cartBtn();">
-            <i class="bx bx-cart" id="cart-logo"></i><span>cart item</span>
+            <i class="bx bx-cart" id="cart-logo"></i>
+            <span class="js-count-items"></span>
             <div class="cart-items-container" id="js-cart-items-container">
-              <div class="cart-items">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Nobis, soluta?
+              <div class="cart-item-nav">
+                <p>my cart</p>
+                <p>x</p>
+              </div>
+              <div class="cart-items" id="js-cart-items">
+              <!-- genrate dynamic -->
               </div>
             </div>
           </button>
@@ -141,7 +145,7 @@
           <div class="back-btn"><i class='bx bx-chevron-left'></i></div>
           <div class="next-btn"><i class='bx bx-chevron-right'></i></div>
         </div>
-     
+
 
     </section>
 

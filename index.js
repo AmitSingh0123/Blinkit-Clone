@@ -1,8 +1,32 @@
+const cartItems = [];
+let cartItemObj;
 onLoad();
+
 function onLoad() {
   showDisplayProduct();
   showDisplayProduct2();
   scrollBarItems();
+  showDisplayCartItems();
+}
+
+function scrollBarItems() {
+  let scroolContainer = document.querySelector("#js-product-items-container1");
+  let backBtn = document.querySelector(".back-btn");
+  let nextBtn = document.querySelector(".next-btn");
+  scroolContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scroolContainer.scrollLeft += evt.deltaY;
+  });
+
+  nextBtn.addEventListener("click", () => {
+    scroolContainer.style.scrollBehavior = "smooth";
+    scroolContainer.scrollLeft += 600;
+  });
+
+  backBtn.addEventListener("click", () => {
+    scroolContainer.style.scrollBehavior = "smooth";
+    scroolContainer.scrollLeft -= 600;
+  });
 }
 
 function cartBtn() {
@@ -17,9 +41,11 @@ function loginBtn() {
 function loginBackBtn() {
   document.querySelector("#js-login-container").classList.remove("active");
 }
+
 function addressBtn() {
   document.querySelector("#js-address-btn").classList.toggle("active");
 }
+
 function addressRemoveBtn() {
   document.querySelector("#js-address-btn").classList.remove("active");
 }
@@ -47,10 +73,9 @@ function showDisplayProduct2() {
   let newHtml = "";
 
   for (let i = 0; i < dairyProducts.length; i++) {
-    let { item_name, img_src, weight, price, origanal_price } =
+    let { item_name, img_src, weight, price, origanal_price, id } =
       dairyProducts[i];
-    console.log(dairyProducts[i]);
-    newHtml += `<a href="#" id="js-item"><div class="produst">
+    newHtml += `<div class="produst">
     <div class="product-body">
       <div class="product-img">
         <img src="${img_src}" alt="">
@@ -71,35 +96,67 @@ function showDisplayProduct2() {
             <p>₹${price} <span id="or-price"> ₹${origanal_price}</span></p>
           </div>
           <div class="product-btn">
-            <button class="product-add-btn">add</button>
+            <button class="product-add-btn" onclick="addToCartItem(${id})">add</button>
           </div>
         </div>
       </div>
     </div>
-  </div></a>
+  </div>
   `;
-    console.log(i);
   }
   productContainer.innerHTML = newHtml;
 }
 
-
-function scrollBarItems(){
-  let scroolContainer = document.querySelector("#js-product-items-container1");
-let backBtn = document.querySelector(".back-btn");
-let nextBtn = document.querySelector(".next-btn");
-scroolContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    scroolContainer.scrollLeft += evt.deltaY;
-});
-
-nextBtn.addEventListener("click",() => {
-    scroolContainer.style.scrollBehavior = "smooth";
-    scroolContainer.scrollLeft += 600;
-});
-
-backBtn.addEventListener("click",() => {
-    scroolContainer.style.scrollBehavior = "smooth";
-    scroolContainer.scrollLeft -= 600;
-});
+function addToCartItem(itemId) {
+  cartItems.push(itemId);
+  showDisplayCartItems();
 }
+
+function showDisplayCartItems() {
+  let count = document.querySelector(".js-count-items");
+  if (cartItems.length === 0) {
+    count.innerText = `my cart`;
+  } else {
+    count.innerText = `items ${cartItems.length}`;
+  }
+  
+  cartItemObj = cartItems.map(itemId => {
+    for(let i = 0; i < dairyProducts.length; i++){
+      if(itemId == dairyProducts[i].id){
+        return dairyProducts[i];
+      }
+    }
+  });
+
+  let cartItemElement = document.querySelector("#js-cart-items");
+  let newHtml = '';
+  for( let i = 0; i < cartItemObj.length; i++){
+    let { item_name, img_src, weight, price} =
+    cartItemObj[i];
+    newHtml += `<div class="cart-item-body">
+    <div class="cart-item-img"><img src="${img_src}" alt=""></div>
+    <div class="cart-item-detele">
+    <div class="cart-item-product-name">${item_name}</div>
+        <div class="cart-item-product-weight">${weight}</div>
+        <div class="cart-item-product-price">₹${price}</div>
+    </div>
+    <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
+</div>`
+  }
+  cartItemElement.innerHTML = newHtml;
+}
+
+
+function genrateCartItemHtml(item){
+  return `<div class="cart-item-body">
+        <div class="cart-item-img"><img src="${item.img_src}" alt=""></div>
+        <div class="cart-item-detele">
+            <div class="cart-item-product-name">${item.item_name}</div>
+            <div class="cart-item-product-weight">${item.weight}</div>
+            <div class="cart-item-product-price">${item.price}</div>
+        </div>
+        <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
+  </div>`;
+}
+
+
