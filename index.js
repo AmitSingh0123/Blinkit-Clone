@@ -141,22 +141,29 @@ function showDisplayCartItems() {
         <div class="cart-item-product-price">₹${price}</div>
     </div>
     <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
-</div>`
+</div>
+`
   }
   cartItemElement.innerHTML = newHtml;
+  if(!cartItemObj.length){
+   return ''
+  }else{
+    let cartItemOrederBtn = document.querySelector('.order-now-btn')
+    cartItemOrederBtn.innerHTML=`<div class="order-now-btn"><a href="">order now</a></div>`
+  }
 }
 
 
-function genrateCartItemHtml(item){
-  return `<div class="cart-item-body">
-        <div class="cart-item-img"><img src="${item.img_src}" alt=""></div>
-        <div class="cart-item-detele">
-            <div class="cart-item-product-name">${item.item_name}</div>
-            <div class="cart-item-product-weight">${item.weight}</div>
-            <div class="cart-item-product-price">${item.price}</div>
-        </div>
-        <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
-  </div>`;
-}
+// function genrateCartItemHtml(item){
+//   return `<div class="cart-item-body">
+//         <div class="cart-item-img"><img src="${item.img_src}" alt=""></div>
+//         <div class="cart-item-detele">
+//             <div class="cart-item-product-name">${item.item_name}</div>
+//             <div class="cart-item-product-weight">${item.weight}</div>
+//             <div class="cart-item-product-price">${item.price}</div>
+//         </div>
+//         <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
+//   </div>`;
+// }
 
 
