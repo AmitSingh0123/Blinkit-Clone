@@ -9,6 +9,7 @@ function onLoad() {
   showDisplayCartItems();
 }
 
+
 function scrollBarItems() {
   let scroolContainer = document.querySelector("#js-product-items-container1");
   let backBtn = document.querySelector(".back-btn");
@@ -27,11 +28,18 @@ function scrollBarItems() {
     scroolContainer.style.scrollBehavior = "smooth";
     scroolContainer.scrollLeft -= 600;
   });
+
 }
 
 function cartBtn() {
   document.querySelector("#js-cart-items-container").classList.toggle("active");
   console.log("amit");
+  let CartBackBtn = document.querySelector(".js-item-back-btn");
+  CartBackBtn.addEventListener("click", () => {
+    document
+      .querySelector("#js-cart-items-container")
+      .classList.remove("active");
+  });
 }
 
 function loginBtn() {
@@ -46,8 +54,10 @@ function addressBtn() {
   document.querySelector("#js-address-btn").classList.toggle("active");
 }
 
-function addressRemoveBtn() {
+function addressRemoveBtn(){
   document.querySelector("#js-address-btn").classList.remove("active");
+
+  
 }
 
 // Product section
@@ -107,32 +117,33 @@ function showDisplayProduct2() {
   productContainer.innerHTML = newHtml;
 }
 
-function addToCartItem(itemId) {
+
+
+function addToCartItem(itemId){
   cartItems.push(itemId);
   showDisplayCartItems();
-}
+};
 
 function showDisplayCartItems() {
   let count = document.querySelector(".js-count-items");
   if (cartItems.length === 0) {
     count.innerText = `my cart`;
   } else {
-    count.innerText = `items ${cartItems.length}`;
+    count.innerText = `${cartItems.length} items `;
   }
-  
-  cartItemObj = cartItems.map(itemId => {
-    for(let i = 0; i < dairyProducts.length; i++){
-      if(itemId == dairyProducts[i].id){
+
+  cartItemObj = cartItems.map((itemId) => {
+    for (let i = 0; i < dairyProducts.length; i++) {
+      if (itemId == dairyProducts[i].id) {
         return dairyProducts[i];
       }
     }
   });
 
   let cartItemElement = document.querySelector("#js-cart-items");
-  let newHtml = '';
-  for( let i = 0; i < cartItemObj.length; i++){
-    let { item_name, img_src, weight, price} =
-    cartItemObj[i];
+  let newHtml = "";
+  for (let i = 0; i < cartItemObj.length; i++) {
+    let { item_name, img_src, weight, price } = cartItemObj[i];
     newHtml += `<div class="cart-item-body">
     <div class="cart-item-img"><img src="${img_src}" alt=""></div>
     <div class="cart-item-detele">
@@ -142,28 +153,14 @@ function showDisplayCartItems() {
     </div>
     <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
 </div>
-`
+`;
   }
   cartItemElement.innerHTML = newHtml;
-  if(!cartItemObj.length){
-   return ''
-  }else{
-    let cartItemOrederBtn = document.querySelector('.order-now-btn')
-    cartItemOrederBtn.innerHTML=`<div class="order-now-btn"><a href="">order now</a></div>`
+  if (!cartItemObj.length) {
+    return "";
+  } else {
+    let cartItemOrederBtn = document.querySelector(".order-now-btn");
+    cartItemOrederBtn.innerHTML = `<div class="order-now-btn"><a href="">order now</a></div>`;
   }
 }
-
-
-// function genrateCartItemHtml(item){
-//   return `<div class="cart-item-body">
-//         <div class="cart-item-img"><img src="${item.img_src}" alt=""></div>
-//         <div class="cart-item-detele">
-//             <div class="cart-item-product-name">${item.item_name}</div>
-//             <div class="cart-item-product-weight">${item.weight}</div>
-//             <div class="cart-item-product-price">${item.price}</div>
-//         </div>
-//         <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
-//   </div>`;
-// }
-
 
