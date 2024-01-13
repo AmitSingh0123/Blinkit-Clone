@@ -1,160 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blinkit Order Now!</title>
+    <!-- icons Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- icons Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- index css link -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blinkit Order Now!</title>
-  <!-- icons Link -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <!-- icons Link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <!-- index css link -->
-  <link rel="stylesheet" href="index.css" />
-</head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo" id="logo">blink<span>it</span></a>
 
-<body>
-  <header class="header">
-    <a href="#" class="logo" id="logo">blink<span>it</span></a>
-
-    <nav class="navbar">
-      <div class="left-nav">
-        <div>
-          <p>Delivery in 10 minutes</p>
-        </div>
-        <div class="nav-address-container">
-          <span>Babarpur, Delhi, 110032, India </span>
-          <span><i class="bx bxs-down-arrow" onclick="addressBtn();"></i>
-          </span>
-          <div class="nav-address-box" id="js-address-btn">
-            <div class="nav-address-title-box">
-              <p>Change Location</p>
-              <span onclick="addressRemoveBtn();"><i class="bx bx-x"></i></span>
-            </div>
-            <div class="address-location-box">
-              <span><a href="#">Detect my location</a></span>
-              <span class="nav-choice-btn">OR</span>
-              <input type="text" placeholder="Search Delivery location " />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mid-nav">
-        <input type="text" class="input-box" placeholder="Search items.." />
-        <i class="bx bx-search"></i>
-      </div>
-      <div class="right-nav">
-        <div>
-          <button class="login-btn" id="js-login-btn">
-            <span onclick="loginBtn()">Login</span>
-            <div class="login-container" id="js-login-container">
-              <div class="back-btn-box">
-                <a href="#"><i class="bx bx-arrow-back"></i></a>
-                <a href="#" onclick="loginBackBtn()"><i class="bx bx-x"></i></a>
-              </div>
-              <div class="login-icon">
-                <img src="/images/icons/icon.webp" alt="" />
-              </div>
-              <div class="login-box-para-container">
-                <h3>India's last minute app</h3>
-                <p>Log in or Sign up</p>
-              </div>
-              <div class="login-input-box">
-                <input type="number" placeholder="Enter Mobile Number.." />
-
-                <div class="login-submit-btn"><a href="#">Continue</a></div>
-              </div>
-              <div class="login-box-bottom-links">
-                <p>
-                  By continuing, you agree to our
-                  <a href="#">Terms of service</a> &
-                  <a href="#">Privacy policy</a>
-                </p>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="cart-container">
-          <button class="cart-btn" id="js-cart-btn" onclick="cartBtn();">
-            <i class="bx bx-cart" id="cart-logo"></i>
-            <span class="js-count-items"></span>
-          </button>
-          <div class="cart-items-container" id="js-cart-items-container">
-            <div class="cart-item-nav">
-              <p>my cart</p>
-              <p class="js-item-back-btn">x</p>
-            </div>
-            <div class="cart-items" id="js-cart-items">
-              <!-- genrate dynamic -->
-
-            </div>
-            <div class="order-now-btn"></div>
-          </div>
-
+      <nav class="navbar">
+        <div class="left-nav">
           <div>
+            <p>Delivery in 10 minutes</p>
+          </div>
+          <div class="nav-address-container">
+            <span>Babarpur, Delhi, 110032, India </span>
+            <span
+              ><i class="bx bxs-down-arrow" onclick="addressBtn();"></i>
+            </span>
+            <div class="nav-address-box" id="js-address-btn">
+              <div class="nav-address-title-box">
+                <p>Change Location</p>
+                <span onclick="addressRemoveBtn();"
+                  ><i class="bx bx-x"></i
+                ></span>
+              </div>
+              <div class="address-location-box">
+                <span><a href="#">Detect my location</a></span>
+                <span class="nav-choice-btn">OR</span>
+                <input type="text" placeholder="Search Delivery location " />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+        <div class="mid-nav">
+          <input type="text" class="input-box" placeholder="Search items.." />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="right-nav">
+          <div>
+            <button class="login-btn" id="js-login-btn">
+              <span onclick="loginBtn()">Login</span>
+              <div class="login-container" id="js-login-container">
+                <div class="back-btn-box">
+                  <a href="#"><i class="bx bx-arrow-back"></i></a>
+                  <a href="#" onclick="loginBackBtn()"
+                    ><i class="bx bx-x"></i
+                  ></a>
+                </div>
+                <div class="login-icon">
+                  <img src="/images/icons/icon.webp" alt="" />
+                </div>
+                <div class="login-box-para-container">
+                  <h3>India's last minute app</h3>
+                  <p>Log in or Sign up</p>
+                </div>
+                <div class="login-input-box">
+                  <input type="number" placeholder="Enter Mobile Number.." />
 
-  <!-- main section -->
-  <main>
-    <section class="hero-section">
-      <div class="first-hero-thumnel">
-        <a href="#"><img
-            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg"
-            alt="" /></a>
-      </div>
-      <div class="Second-hero-thumnel">
-        <a href="#"><img
-            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg"
-            alt="" /></a>
-        <a href="#"><img
-            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/print_crystal_WEB_0.jpg"
-            alt="" /></a>
-        <a href="#"><img
-            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
-            alt="" /></a>
-        <a href="#"><img
-            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-03/babycare-WEB.jpg"
-            alt="" /></a>
-      </div>
-      <div class="Product-section" id="js-Product-section">
-        <!-- Product Dynamic Generated-->
-      </div>
-    </section>
-    <section>
-      <div class="product-item-section">
-        <div class="product-item-title">
-          <div>
-            <h3>Rolling paper & tobacco</h3>
+                  <div class="login-submit-btn"><a href="#">Continue</a></div>
+                </div>
+                <div class="login-box-bottom-links">
+                  <p>
+                    By continuing, you agree to our
+                    <a href="#">Terms of service</a> &
+                    <a href="#">Privacy policy</a>
+                  </p>
+                </div>
+              </div>
+            </button>
           </div>
-          <div>
-            <p><a href="#">See All</a></p>
+          <div class="cart-container">
+            <button class="cart-btn" id="js-cart-btn" onclick="cartBtn();">
+              <i class="bx bx-cart" id="cart-logo"></i>
+              <span class="js-count-items"></span>
+            </button>
+            <div class="cart-items-container" id="js-cart-items-container">
+              <div class="cart-item-nav">
+                <p>my cart</p>
+                <p class="js-item-back-btn">x</p>
+              </div>
+              <div class="cart-items" id="js-cart-items">
+                <!-- genrate dynamic -->
+              </div>
+              <div class="order-now-btn"></div>
+            </div>
+
+            <div></div>
           </div>
         </div>
-        <div class="product-items-container" id="js-product-items-container1">
+      </nav>
+    </header>
+
+    <!-- main section -->
+    <main>
+      <section class="hero-section">
+        <div class="first-hero-thumnel">
+          <a href="#"
+            ><img
+              src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg"
+              alt=""
+          /></a>
+        </div>
+        <div class="Second-hero-thumnel">
+          <a href="#"
+            ><img
+              src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg"
+              alt=""
+          /></a>
+          <a href="#"
+            ><img
+              src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/print_crystal_WEB_0.jpg"
+              alt=""
+          /></a>
+          <a href="#"
+            ><img
+              src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"
+              alt=""
+          /></a>
+          <a href="#"
+            ><img
+              src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-03/babycare-WEB.jpg"
+              alt=""
+          /></a>
+        </div>
+        <div class="Product-section" id="js-Product-section">
           <!-- Product Dynamic Generated-->
         </div>
-        <div class="item-next-btns-container">
-          <div class="back-btn"><i class='bx bx-chevron-left'></i></div>
-          <div class="next-btn"><i class='bx bx-chevron-right'></i></div>
+      </section>
+      <section>
+        <div class="product-item-section">
+          <div class="product-item-title">
+            <div>
+              <h3>Dairy, Bread & Eggs</h3>
+            </div>
+            <div>
+              <p><a href="#">See All</a></p>
+            </div>
+          </div>
+          <div class="product-items-container" id="js-product-items-container1">
+            <!-- Product Dynamic Generated-->
+          </div>
+          <div class="item-next-btns-container">
+            <div class="back-btn"><i class="bx bx-chevron-left"></i></div>
+            <div class="next-btn"><i class="bx bx-chevron-right"></i></div>
+          </div>
         </div>
-      </div>
-    </section>
-    
-  </main>
-  <footer>
-    <div class="footer-container">
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente aliquam architecto alias possimus. Tempore earum excepturi consequuntur quae, reiciendis officia, vero, perferendis aperiam dolor doloribus magni quos blanditiis. Reiciendis culpa incidunt, iusto eligendi suscipit fugit quas accusantium totam delectus nihil.
-    </div>
-  </footer>
-  <script src="productData.js"></script>
-  <script src="index.js"></script>
+      </section>
+      <section class="footer">
+        <div class="footer-container">
+          <div>
+            <a href="#" class="footer-heading">Useful Links</a>
+            <div>
+            <div class="link-container">
+              <div class="Useful-links">
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Lead</a></li>
+                  <li><a href="#">Value</a></li>
+                </ul>
+              </div>
 
-</body>
+              <div class="Useful-links" >
+                <ul>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Security</a></li>
+                  <li><a href="#">Mobile</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
 
+              <div class="Useful-links">
+                <ul>
+                  <li><a href="#">Partner</a></li>
+                  <li><a href="#">Express</a></li>
+                  <li><a href="#">Seller</a></li>
+                  <li><a href="#">Spotlight</a></li>
+                  <li><a href="#">Warehouse</a></li>
+                  <li><a href="#">Deliver</a></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-heading2">Categories <span><a href="#">see all</a></span></h3>
+            <div>
+            <div class="link-container2">
+              <div class="Useful-links">
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Press</a></li>
+                  <li><a href="#">Lead</a></li>
+                  <li><a href="#">Value</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">FAQs</a></li>
+                </ul>
+              </div>
+
+              <div class="Useful-links" >
+                <ul>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Security</a></li>
+                  <li><a href="#">Mobile</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+
+              <div class="Useful-links">
+                <ul>
+                  <li><a href="#">Partner</a></li>
+                  <li><a href="#">Express</a></li>
+                  <li><a href="#">Seller</a></li>
+                  <li><a href="#">Spotlight</a></li>
+                  <li><a href="#">Warehouse</a></li>
+                  <li><a href="#">Deliver</a></li>
+                  <li><a href="#">Privacy</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">FAQs</a></li>
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="socal-media-links-container">
+          <div><p>© Blink Commerce Private Limited (formerly known as Grofers India Private Limited), 2016-2024</p></div>
+          <div class="payment-container">
+            <div><p>Download App</p></div>
+            <div><img src="https://blinkit.com/d61019073b700ca49d22.png" alt=""></div>
+            <div><img src="https://blinkit.com/8ed033800ea38f24c4f0.png" alt=""></div>
+          </div>
+          <div class="socal-media-links">
+            <ul>
+              <li><i class='bx bxl-facebook-circle'></i></li>
+              <li><i class='bx bxl-instagram'></i></li>
+              <li><i class='bx bxl-linkedin-square'></i></li>
+              <li><i class='bx bxl-twitter' ></i></li>
+              <li><i class='bx bxl-whatsapp' ></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-last-para">
+          <p>“Blinkit” is owned & managed by "Blink Commerce Private Limited" (formerly known as Grofers India Private Limited) and is not related, linked or interconnected in whatsoever manner or nature, to “GROFFR.COM” which is a real estate services business operated by “Redstone Consultancy Services Private Limited”.</p>
+        </div>
+
+      </section>
+    </main>
+    <script src="productData.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>

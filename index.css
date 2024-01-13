@@ -450,7 +450,7 @@ button {
   padding: .5rem 1rem;
   border-radius: .5rem;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid var(--cart-bg-color);
   cursor: pointer;
   width: 6.5rem;
   display: flex;
@@ -459,6 +459,7 @@ button {
   font-size: 1.5rem;
   margin-left: 35%;
   margin-top: 15%;
+  background-color: var(--btn-bg--first-color);
 }
 
 /* order-now-btn */
@@ -486,22 +487,23 @@ button {
 /* main section */
 
 main {
-  margin-top: 14rem;
-  position: absolute;
+  margin-top: 10rem;
   display: flex;
   width: 100%;
-  justify-content: center;
   z-index: -999;
   flex-direction: column;
   align-items: center;
   height: 100%;
+  position: absolute;
+  /* top: 35rem; */
 }
-section{
+
+section {
   max-width: 140rem;
   width: 100%;
-  margin:1rem 0;
+  margin: 1rem 0;
   z-index: 999;
-  padding:2rem;
+  padding: 2rem;
 }
 
 .hero-section {
@@ -707,22 +709,124 @@ section{
   width: 100%;
   bottom: 0rem;
 }
-#js-product-items-container2{
+
+#js-product-items-container2 {
   overflow: scroll;
 }
+
 /* footer */
-footer{
-  position: absolute;
-  top: 200%;
+.footer{
   display: flex;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
+  margin-top: 20rem;
+  width: 100%;
+  padding:2rem;
 }
-.footer-container{
-  height: 50rem;
-  margin: 0 auto;
-  border: 2px solid black;
 
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rem;
+  padding:2rem;
+  border-bottom: 1.5px solid var(--text-color);
+}
+
+.footer-heading {
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.Useful-links {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin-top: 1rem;
+}
+
+.Useful-links ul {
+  list-style: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Useful-links ul a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.link-container {
+  display: flex;
+  gap: 8rem;
+  opacity: .5;
+  align-items: center;
+}
+
+.footer-heading2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.footer-heading2 span a {
+  font-size: 2.5rem;
+  color: var(--cart-bg-color);
+  margin-left: 3rem;
+  text-decoration: none;
+}
+
+.link-container2 {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  opacity: .5;
+  margin-top: 2rem;
+}
+
+.footer-last-para {
+  font-size: 1.5rem;
+  font-weight: 700;
+  opacity: .7;
+}
+
+.socal-media-links-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 4rem;
+}
+
+.socal-media-links ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  list-style: none;
+  font-size: 5rem;
+}
+
+.socal-media-links-container p {
+  font-size: 1.5rem;
+}
+
+.payment-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 30%;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.payment-container img {
+  height: 3rem;
 }
 
 
@@ -764,7 +868,6 @@ footer{
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem 4rem;
-
   }
 
   .login-container {
@@ -772,6 +875,7 @@ footer{
     top: 287%;
     left: -900%;
   }
+
 }
 
 @media (max-width:907px) {
@@ -804,19 +908,39 @@ footer{
   .navbar {
     flex-wrap: nowrap;
   }
-
 }
 
 @media (max-width:672px) {
   .left-nav {
     display: none;
   }
+
+  .footer-container {
+    gap: 5rem;
+    justify-content: center;
+  }
+
+  .socal-media-links-container {
+    justify-content: center;
+    gap: 0;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .payment-container {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 2rem;
+    width: 100%;
+    margin:2rem 0;
+  }
 }
 
 @media (max-width:372px) {
 
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 
   .mid-nav {
@@ -842,10 +966,6 @@ footer{
   .login-container {
     position: absolute;
     margin-top: 100rem;
-  }
-
-  main {
-    margin-top: 10rem;
   }
 
   .first-hero-thumnel {
