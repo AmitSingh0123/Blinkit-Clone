@@ -472,7 +472,6 @@ button {
   justify-content: center;
 
 }
-
 .order-now-btn a {
   font-size: 1.5rem;
   color: var(--text-color);
@@ -481,9 +480,57 @@ button {
   width: 97%;
   padding: 1rem;
   border-radius: .5rem;
-
 }
-
+/* cart-nav-container */
+.js-cart-nav-container{
+  padding: 2rem;
+  display: none;
+}
+.cart-nav-container{
+  display: flex;
+  align-items: center;
+  width:100%;
+  height: 35rem;
+  background-color: var(--bg-color);
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 1.5rem;
+  flex-direction: column;
+  
+}
+.js-cart-nav-container.active{
+  display: block;
+}
+.cart-nav-container div{
+  height: 10rem;
+  width: 10rem;
+}
+.cart-nav-container img{
+  width: 100%;
+  height: 100%;
+}
+.cart-nav-container h3{
+  margin-top: 4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.cart-nav-container p{
+  font-size: 1.5rem;
+  opacity: .5;
+}
+.shopping-btn{
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: var(--cart-bg-color);
+  color: var(--text-color);
+  transition: .5s;
+  margin-top: 1.5rem;
+}
+.shopping-btn:hover{
+  background-color: #178529;
+}
 /* main section */
 
 main {

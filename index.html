@@ -35,12 +35,12 @@
           <div class="nav-address-container">
             <span>Babarpur, Delhi, 110032, India </span>
             <span
-              ><i class="bx bxs-down-arrow" onclick="addressBtn();"></i>
+              ><i class="bx bxs-down-arrow"></i>
             </span>
             <div class="nav-address-box" id="js-address-btn">
               <div class="nav-address-title-box">
                 <p>Change Location</p>
-                <span onclick="addressRemoveBtn();"
+                <span 
                   ><i class="bx bx-x"></i
                 ></span>
               </div>
@@ -97,10 +97,19 @@
             <div class="cart-items-container" id="js-cart-items-container">
               <div class="cart-item-nav">
                 <p>my cart</p>
-                <p class="js-item-back-btn">x</p>
+                <p class="js-item-back-btn"><i class='bx bx-x'></i></p>
+              </div>
+              <div class="js-cart-nav-container">
+                <div class="cart-nav-container">
+                  <div><img src="https://cdn.grofers.com/assets/ui/empty_states/emp_empty_cart.png" alt=""></div>
+                  <h3>You don't have any items in your cart</h3>
+                  <p>Your favourite items are just a click away</p>
+                  <button class="shopping-btn" id="shopping-btn">Start Shopping</button>
+                </div>
               </div>
               <div class="cart-items" id="js-cart-items">
                 <!-- genrate dynamic -->
+                
               </div>
               <div class="order-now-btn"></div>
             </div>
@@ -278,7 +287,6 @@
         <div class="footer-last-para">
           <p>“Blinkit” is owned & managed by "Blink Commerce Private Limited" (formerly known as Grofers India Private Limited) and is not related, linked or interconnected in whatsoever manner or nature, to “GROFFR.COM” which is a real estate services business operated by “Redstone Consultancy Services Private Limited”.</p>
         </div>
-
       </section>
     </main>
     <script src="productData.js"></script>

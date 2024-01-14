@@ -89,6 +89,7 @@ let dairyProducts = [
     weight:'500 g',
     price:'290',
     origanal_price:'310',
+    quentity:'1',
   },
   {
     id:'002',
@@ -96,7 +97,8 @@ let dairyProducts = [
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/127031a.jpg?ts=1688811024',
     weight:'400 g',
     price:'55',
-    origanal_price:'',
+    origanal_price:'64',
+    quentity:'1',
   },
   {
     id:'003',
@@ -104,7 +106,8 @@ let dairyProducts = [
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/160a.jpg?ts=1689327537',
     weight:'500 g',
     price:'285',
-    origanal_price:'',
+    origanal_price:'300',
+    quentity:'1',
   },
   {
     id:'004',
@@ -113,6 +116,7 @@ let dairyProducts = [
     weight:'200 g',
     price:'144',
     origanal_price:'160',
+    quentity:'1',
   },
   {
     id:'005',
@@ -120,7 +124,8 @@ let dairyProducts = [
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/26164a.jpg?ts=1690814323',
     weight:'200 g',
     price:'66',
-    origanal_price:'',
+    origanal_price:'70',
+    quentity:'1',
   },
   {
     id:'006',
@@ -129,6 +134,7 @@ let dairyProducts = [
     weight:'500 g',
     price:'25',
     origanal_price:'27',
+    quentity:'1',
   },
   {
     id:'007',
@@ -137,6 +143,7 @@ let dairyProducts = [
     weight:'500 g',
     price:'24',
     origanal_price:'26',
+    quentity:'1',
   },
   {
     id:'008',
@@ -144,7 +151,8 @@ let dairyProducts = [
     img_src:'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/app/images/products/sliding_image/480950a.jpg?ts=1687523763',
     weight:'400 g',
     price:'50',
-    origanal_price:'',
+    origanal_price:'60',
+    quentity:'1',
   },
   {
     id:'009',
@@ -153,6 +161,7 @@ let dairyProducts = [
     weight:'360 g',
     price:'143',
     origanal_price:'144',
+    quentity:'1',
   },
   {
     id:'010',
@@ -161,6 +170,7 @@ let dairyProducts = [
     weight:'200 g',
     price:'134',
     origanal_price:'140',
+    quentity:'1',
   },
   {
     id:'011',
@@ -169,6 +179,7 @@ let dairyProducts = [
     weight:'400 g',
     price:'55',
     origanal_price:'60',
+    quentity:'1',
   },
   {
     id:'012',
@@ -177,6 +188,7 @@ let dairyProducts = [
     weight:'200 g',
     price:'100',
     origanal_price:'110',
+    quentity:'1',
   },
   {
     id:'013',
@@ -185,6 +197,7 @@ let dairyProducts = [
     weight:'200 g',
     price:'125',
     origanal_price:'135',
+    quentity:'1',
   },
   {
     id:'014',
@@ -193,6 +206,7 @@ let dairyProducts = [
     weight:'500 g',
     price:'300',
     origanal_price:'350',
+    quentity:'1',
   },
   {
     id:'015',
@@ -201,6 +215,7 @@ let dairyProducts = [
     weight:'500 g',
     price:'300',
     origanal_price:'350',
+    quentity:'1',
   },
 
 ];

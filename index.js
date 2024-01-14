@@ -1,14 +1,15 @@
-const cartItems = [];
+let cartItems;
 let cartItemObj;
 onLoad();
-
 function onLoad() {
+  let cartItemstr = localStorage.getItem("cartItems");
+  cartItems = cartItemstr ? JSON.parse(cartItemstr) : [];
+  displaycartIcon();
   showDisplayProduct();
-  showDisplayProduct2();
   scrollBarItems();
-  showDisplayCartItems();
+  displayItemOnHomePage();
+  navBtns();
 }
-
 
 function scrollBarItems() {
   let scroolContainer = document.querySelector("#js-product-items-container1");
@@ -28,7 +29,6 @@ function scrollBarItems() {
     scroolContainer.style.scrollBehavior = "smooth";
     scroolContainer.scrollLeft -= 600;
   });
-
 }
 
 function cartBtn() {
@@ -50,14 +50,21 @@ function loginBackBtn() {
   document.querySelector("#js-login-container").classList.remove("active");
 }
 
-function addressBtn() {
-  document.querySelector("#js-address-btn").classList.toggle("active");
-}
+function navBtns() {
+  let removeAdderssBtn = document.querySelector(".bx-x");
+  let addAdderssBtn = document.querySelector(".bxs-down-arrow");
+  let loginBackBtn = document.querySelector(".login-btn");
 
-function addressRemoveBtn(){
-  document.querySelector("#js-address-btn").classList.remove("active");
+  removeAdderssBtn.addEventListener("click", () => {
+    document.querySelector("#js-address-btn").classList.remove("active");
+  });
 
-  
+  addAdderssBtn.addEventListener("click", () => {
+    document.querySelector("#js-address-btn").classList.toggle("active");
+  });
+  loginBackBtn.addEventListener("click", () => {
+    document.querySelector("#js-login-container").classList.remove("active");
+  });
 }
 
 // Product section
@@ -78,60 +85,32 @@ function showDisplayProduct() {
   productContainer1.innerHTML = newHtml1;
 }
 
-function showDisplayProduct2() {
-  let productContainer = document.querySelector("#js-product-items-container1");
-  let newHtml = "";
-
-  for (let i = 0; i < dairyProducts.length; i++) {
-    let { item_name, img_src, weight, price, origanal_price, id } =
-      dairyProducts[i];
-    newHtml += `<div class="produst">
-    <div class="product-body">
-      <div class="product-img">
-        <img src="${img_src}" alt="">
-      </div>
-      <div class="product-deteles">
-        <div class="product-time-logo">
-          <div><img src="/images/icons/15-mins-logo.avif" alt=""></div>
-          <div><span>15 MINS</span></div>
-        </div>
-        <div class="product-title">
-          <h4>${item_name}</h4>
-        </div>
-        <div class="product-weight">
-          <p>${weight}</p>
-        </div>
-        <div class="product-btn-box">
-          <div class="Product-amount">
-            <p>₹${price} <span id="or-price"> ₹${origanal_price}</span></p>
-          </div>
-          <div class="product-btn">
-            <button class="product-add-btn" onclick="addToCartItem(${id})">add</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
-  }
-  productContainer.innerHTML = newHtml;
+function addToCart(itemId) {
+  cartItems.push(itemId);
+  localStorage.setItem("cartIems", JSON.stringify(cartItems));
+  displaycartIcon();
 }
 
-
-
-function addToCartItem(itemId){
-  cartItems.push(itemId);
-  showDisplayCartItems();
-};
-
-function showDisplayCartItems() {
+function displaycartIcon() {
   let count = document.querySelector(".js-count-items");
+  let cartItemNavElement = document.querySelector(".js-cart-nav-container");
   if (cartItems.length === 0) {
     count.innerText = `my cart`;
   } else {
     count.innerText = `${cartItems.length} items `;
   }
 
+  if (!cartItems.length) {
+    cartItemNavElement.classList.add("active");
+  } else {
+    let cartItemOrederBtn = document.querySelector(".order-now-btn");
+    cartItemOrederBtn.innerHTML = `<div class="order-now-btn"><a href="">order now</a></div>`;
+    cartItemNavElement.classList.remove("active");
+  }
+  displayCartItemObject();
+  displayCartItems();
+}
+function displayCartItemObject() {
   cartItemObj = cartItems.map((itemId) => {
     for (let i = 0; i < dairyProducts.length; i++) {
       if (itemId == dairyProducts[i].id) {
@@ -139,28 +118,73 @@ function showDisplayCartItems() {
       }
     }
   });
-
-  let cartItemElement = document.querySelector("#js-cart-items");
-  let newHtml = "";
-  for (let i = 0; i < cartItemObj.length; i++) {
-    let { item_name, img_src, weight, price } = cartItemObj[i];
-    newHtml += `<div class="cart-item-body">
-    <div class="cart-item-img"><img src="${img_src}" alt=""></div>
-    <div class="cart-item-detele">
-    <div class="cart-item-product-name">${item_name}</div>
-        <div class="cart-item-product-weight">${weight}</div>
-        <div class="cart-item-product-price">₹${price}</div>
-    </div>
-    <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span>-</span> <span>1</span> <span>+</span></button></div>
-</div>
-`;
-  }
-  cartItemElement.innerHTML = newHtml;
-  if (!cartItemObj.length) {
-    return "";
-  } else {
-    let cartItemOrederBtn = document.querySelector(".order-now-btn");
-    cartItemOrederBtn.innerHTML = `<div class="order-now-btn"><a href="">order now</a></div>`;
-  }
 }
 
+function displayItemOnHomePage() {
+  let productContainerElement = document.querySelector(
+    "#js-product-items-container1"
+  );
+  let innerHtml = "";
+
+  dairyProducts.forEach((item) => {
+    innerHtml += `<div class="produst">
+    <div class="product-body">
+      <div class="product-img">
+        <img src="${item.img_src}" alt="">
+      </div>
+      <div class="product-deteles">
+        <div class="product-time-logo">
+          <div><img src="/images/icons/15-mins-logo.avif" alt=""></div>
+          <div><span>15 MINS</span></div>
+        </div>
+        <div class="product-title">
+          <h4>${item.item_name}</h4>
+        </div>
+        <div class="product-weight">
+          <p>${item.weight}</p>
+        </div>
+        <div class="product-btn-box">
+          <div class="Product-amount">
+            <p>₹${item.price} <span id="or-price"> ₹${item.origanal_price}</span></p>
+          </div>
+          <div class="product-btn">
+            <button class="product-add-btn" onclick="addToCart(${item.id})">add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+  });
+
+  productContainerElement.innerHTML = innerHtml;
+}
+
+function removeFromCart(itemId) {
+  cartItems = cartItems.filter((cartItemId) => cartItemId != itemId);
+  localStorage.setItem("cartItems", cartItems);
+  displaycartIcon();
+}
+
+function displayCartItems() {
+  let cartItemElement = document.querySelector("#js-cart-items");
+  let newHtml = "";
+
+  cartItemObj.forEach((cartItem) => {
+    newHtml += genrateItemHtml(cartItem);
+  });
+
+  cartItemElement.innerHTML = newHtml;
+}
+
+function genrateItemHtml(item) {
+  return `<div class="cart-item-body">
+  <div class="cart-item-img"><img src="${item.img_src}" alt=""></div>
+  <div class="cart-item-detele">
+  <div class="cart-item-product-name">${item.item_name}</div>
+      <div class="cart-item-product-weight">${item.weight}</div>
+      <div class="cart-item-product-price">₹${item.price}</div>
+  </div>
+  <div class="cart-item-btn"><button class="cart-item-product-delete-btn" id="js-cart-item-product-delete-btn"><span onclick="removeFromCart(${item.id})">-</span> <span>1</span> <span>+</span></button></div>
+</div>`;
+}
