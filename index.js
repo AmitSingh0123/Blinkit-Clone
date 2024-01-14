@@ -134,7 +134,7 @@ function displayItemOnHomePage() {
       </div>
       <div class="product-deteles">
         <div class="product-time-logo">
-          <div><img src="/images/icons/15-mins-logo.avif" alt=""></div>
+          <div><img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=90/assets/eta-icons/15-mins.png" alt=""></div>
           <div><span>15 MINS</span></div>
         </div>
         <div class="product-title">
