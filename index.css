@@ -366,7 +366,7 @@ button {
   align-items: center;
   width: 100%;
   padding: 1rem;
-  height: 85vh;
+  height:62vh;
   overflow: scroll;
 }
 
@@ -477,10 +477,103 @@ button {
   color: var(--text-color);
   text-decoration: none;
   background-color: var(--cart-bg-color);
-  width: 97%;
+  width:100%;
   padding: 1rem;
   border-radius: .5rem;
+  margin:2rem auto;
+  color: var(--text-color);
 }
+/* cart-summary */
+.cart-summary-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-summary{
+  width:90%;
+  display: flex;
+  flex-direction: column;
+  background-color:#fff;
+  align-items:center;
+  border-bottom-right-radius:1.5rem;
+  border-bottom-left-radius:1.5rem;
+}
+.bill-details span{
+  font-size: 2rem;
+  font-weight:700;
+  padding:3rem 1rem;
+  margin-right:23.7rem;
+ 
+}
+.flex-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+ margin-top: .5rem;
+ padding:0 1rem;
+}
+.flex-container span{
+  font-size: 1.5rem;
+}
+.cart-summary-footer{
+  width: 100%;
+  height: 4rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.wave{
+  position:absolute;
+  background: linear-gradient(90deg, #27b6b9 0%, #0f4061 100%);
+  width: 90%;
+  height: 6rem;
+  margin-top: -6rem;
+  font-size: 1.5rem;
+}
+
+/* Wave text css */
+.wave {
+  color: #fff;
+  text-align: center;
+}
+/* */
+
+.wave::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height:1rem;
+  background-size: 20px 20px;
+  background-image: radial-gradient(
+    circle at 10px -5px,
+    transparent 12px,
+    #fff 13px
+  );
+}
+.wave::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height:1.5rem;
+  background-size: 40px 20px;
+  background-image: radial-gradient(
+    circle at 10px 15px,
+    #fff 12px,
+    transparent 13px
+  );
+}
+
+
 /* cart-nav-container */
 .js-cart-nav-container{
   padding: 2rem;
@@ -518,15 +611,18 @@ button {
   font-size: 1.5rem;
   opacity: .5;
 }
-.shopping-btn{
-  font-size: 1rem;
+.shopping-btn a{
+  font-size: 1.5rem;
   padding: 1rem 2.5rem;
+  text-decoration: none;
   border-radius: 1rem;
   cursor: pointer;
   background-color: var(--cart-bg-color);
   color: var(--text-color);
   transition: .5s;
-  margin-top: 1.5rem;
+}
+.shopping-btn {
+  margin-top: 2rem;
 }
 .shopping-btn:hover{
   background-color: #178529;

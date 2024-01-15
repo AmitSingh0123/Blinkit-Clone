@@ -1,5 +1,7 @@
 let cartItems;
 let cartItemObj;
+localStorage.clear();
+
 onLoad();
 function onLoad() {
   let cartItemstr = localStorage.getItem("cartItems");
@@ -103,11 +105,10 @@ function displaycartIcon() {
   if (!cartItems.length) {
     cartItemNavElement.classList.add("active");
   } else {
-    let cartItemOrederBtn = document.querySelector(".order-now-btn");
-    cartItemOrederBtn.innerHTML = `<div class="order-now-btn"><a href="">order now</a></div>`;
     cartItemNavElement.classList.remove("active");
   }
   displayCartItemObject();
+  cartSummry();
   displayCartItems();
 }
 function displayCartItemObject() {
@@ -175,6 +176,80 @@ function displayCartItems() {
   });
 
   cartItemElement.innerHTML = newHtml;
+}
+function cartSummry() {
+  let cartSummry = document.querySelector(".cart-summary-container");
+  let totalItem = cartItems.length;
+  let totalMRP = 0;
+  let totalDicount = 0;
+  let finalPayment = 0;
+  let deliveryCharge = 15;
+
+  cartItemObj.forEach((cartItems) => {
+    totalMRP += cartItems.origanal_price;
+    totalDicount += cartItems.origanal_price - cartItems.price;
+    finalPayment += cartItems.price;
+  });
+  finalPayment += deliveryCharge;
+  cartSummry.innerHTML = `<div class="cart-summary">
+  <div class="bill-details">
+    <span>Bill Details</span>
+  </div>
+  <div class="total-items flex-container">
+    <div>
+      <span><span><i class='bx bxs-food-menu'></i></span>
+      (<span>total items <span>${totalItem}</span>)</span></span>
+    </div>
+    <div>
+      
+    </div>
+
+  </div>
+
+  <div class="total-items flex-container">
+    <div>
+      <span>total dicount</span>
+    </div>
+    <div>
+      <span>₹${totalDicount}</span>
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div>
+      <span> <span><i class='bx bx-cycling'></i></span>
+      <span>Delivery charge</span>
+      <span><i class='bx bxs-info-circle'></i></span></span>
+     
+    </div>
+    <div>
+      <span>₹${deliveryCharge}</span>
+    </div>
+  </div>
+
+  <div class="flex-container">
+  <div>
+    <span>totalMRP</span>
+  </div>
+  <div>
+    <span>₹${totalMRP}</span>
+  </div>
+</div>
+
+  <div class="flex-container">
+    <div>
+      <span>Grand total</span>
+    </div>
+    <div>
+      <span>₹${finalPayment}</span>
+    </div>
+  </div>
+  <div class="cart-summary-footer wave"><span>Shop for ₹16 more to save ₹16 on delivery charge</span></div>
+  <div class="order-now-btn" onclick = "oredrCompleat()"><a href="index.html">oreder now!</a></div>
+  `;
+}
+function oredrCompleat(){
+  alert(' 🤝 Thanks so much for your order! I hope you enjoy your new purchase! ...')
 }
 
 function genrateItemHtml(item) {
